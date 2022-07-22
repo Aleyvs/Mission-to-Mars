@@ -16,7 +16,7 @@
       <div class="jumbotron text-center">
         <h1>Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
-        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+        <p><a class="btn btn-info btn-lg active" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
       <!-- Add section for Mars News -->
       <div class="row" id="mars-news">
@@ -24,8 +24,8 @@
           <div class="media">
             <div class="media-body">
               <h2>Latest Mars News</h2>
-              <h4 class="media-heading">{{ mars.news_title }}</h4>
-              <p>{{ mars.news_paragraph }}</p>
+              <h3 class="media-heading">{{ mars.news_title }}</h3>
+              <p class="lead">{{ mars.news_paragraph }}</p>
             </div>
           </div>
         </div>
@@ -33,18 +33,18 @@
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
-          <h2>Featured Mars Image</h2>
-          <img
-            src="{{mars.featured_image}}"
-            class="img-responsive"
-            alt="Responsive image"
-          />
+            <h2>Featured Mars Image</h2>
+            <img
+                src="{{mars.featured_image}}"
+                class="img-responsive"
+                alt="img-rounded"
+            />
         </div>
         <div class="col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
-            <h4>Mars Facts</h4>
-            {{ mars.facts | safe }}
+            <h2>Mars Facts</h2>
+            <table class = "table table-bordered">{{ mars.facts | safe }}</table>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@
                 <div class="thumbnail">
                     <img src="{{hemisphere.img_url | default('static/images/error.png', true)}}" alt="...">
                     <div class="caption">
-                        <h3>{{hemisphere.title}}</h3>
+                        <h3 class="text-center">{{hemisphere.title}}</h3>
                     </div>
                 </div>
             </div>
